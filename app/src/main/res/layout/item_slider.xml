@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivItemSlider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="256dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvItemSliderTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/gap2X"
+        android:layout_marginEnd="@dimen/gap2X"
+        android:layout_marginBottom="@dimen/gapX"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dg_text_size_20"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvItemSliderDesc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Moonrise Kingdom (2012)" />
+
+    <TextView
+        android:id="@+id/tvItemSliderDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/gap2X"
+        android:layout_marginEnd="@dimen/gap2X"
+        android:layout_marginBottom="@dimen/gap6X"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="A pair of young lovers flee their New England town, which causes a local search party to fan out to find them." />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

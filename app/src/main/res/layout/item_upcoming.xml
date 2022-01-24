@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewState"
+            type="com.furkanboran.movies.features.home.ui.adapter.UpcomingMoviesViewState" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        android:minHeight="136dp">
+
+        <ImageView
+            android:id="@+id/ivItemUpcoming"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/gap2X"
+            android:layout_marginTop="@dimen/gap2X"
+            android:layout_marginBottom="@dimen/gap2X"
+            android:minWidth="104dp"
+            android:scaleType="fitXY"
+            url="@{viewState.moviePosterUrl}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvItemUpcomingTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gapX"
+            android:layout_marginTop="@dimen/gap3X"
+            android:layout_marginEnd="@dimen/gap2X"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{viewState.title}"
+            android:textColor="@color/textBlack"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivItemUpcoming"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Moonrise Kingdom (2012)" />
+
+        <TextView
+            android:id="@+id/tvItemUpcomingDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gapX"
+            android:layout_marginTop="@dimen/gapX"
+            android:layout_marginEnd="@dimen/gap2X"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/textGray"
+            android:text="@{viewState.overview}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivItemUpcomingArrow"
+            app:layout_constraintStart_toEndOf="@+id/ivItemUpcoming"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemUpcomingTitle"
+            tools:text="A pair of young lovers flee their New England town, which causes a local search party to fan out to find them." />
+
+
+        <ImageView
+            android:id="@+id/ivItemUpcomingArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/gap3X"
+            android:src="@drawable/ic_arrow_upcoming"
+            app:layout_constraintBottom_toBottomOf="@id/ivItemUpcoming"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivItemUpcoming" />
+
+        <TextView
+            android:id="@+id/tvItemUpcomingDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gapX"
+            android:layout_marginEnd="@dimen/gap2X"
+            android:textColor="@color/textGray"
+            android:text="@{viewState.date}"
+            app:layout_constraintBottom_toBottomOf="@+id/ivItemUpcoming"
+            app:layout_constraintEnd_toStartOf="@+id/ivItemUpcomingArrow"
+            tools:text="15.06.2021" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
